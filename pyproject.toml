@@ -1,0 +1,33 @@
+[project]
+name = "drp1-mito-fission-model"
+version = "0.1.0"
+description = "Numerical simulations of a drp1 dependent mitochondrial fission model"
+authors = [
+    { name = "Anna Leinheiser", email = "anna-leinheiser@uiowa.edu" },
+    { name = "Ethan Rooke", email = "ethan-rooke@uiowa.edu" }
+]
+dependencies = [
+    "salib>=1.5.0",
+    "numpy>=2.0.1",
+    "autograd>=1.6.2",
+    "matplotlib>=3.9.2",
+    "scipy>=1.14.0",
+    "joblib>=1.4.2",
+    "tqdm>=4.66.5",
+]
+readme = "readme.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["code/*"]
