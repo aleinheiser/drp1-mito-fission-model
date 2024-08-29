@@ -33,7 +33,14 @@ p = np.array((1.75, 1.25, 1, 0.75, 0.25))
 
 ################################################################################################
 # TFR_cumTF_k+
-ms = []
+n = [
+    r"$+75\%\ $",
+    r"$+25\%\ $",
+    r"$k_+$",
+    r"$-25\%\ $",
+    r"$-75\%\ $",
+]
+
 ms = [
     r"$+75\%\ k_+$",
     r"$+25\%\ k_+$",
@@ -73,20 +80,28 @@ ax.set_ylabel("TFR ($nM/s$)", size=12)
 
 ax = axes[0][1]
 ax.bar(
-    ms,
+    n,
     integral,
     color=["tab:blue", "tab:orange", "tab:green", "tab:red", "tab:purple"],
 )
 add_title(ax, "B")
 ax.set_xticks(
-    np.arange(len(ms)),
-    ms,
-    size=8,
+    np.arange(len(n)),
+    n,
+    size=9.5,
 )
 ax.set_ylabel("Cumulative TF $(nM)$", size=12)
 
 ###########################################################################################
 # TFR_cumTF_k-
+n = [
+    r"$+75\%\ $",
+    r"$+25\%\ $",
+    r"$k_{-}$",
+    r"$-25\%\ $",
+    r"$-75\%\ $",
+]
+
 ms = [
     r"$+75\%\ k_{-}$",
     r"$+25\%\ k_{-}$",
@@ -126,14 +141,22 @@ ax.set_ylabel("TFR ($nM/s$)", size=12)
 
 ax = axes[1][1]
 ax.bar(
-    ms, integral, color=["tab:blue", "tab:orange", "tab:green", "tab:red", "tab:purple"]
+    n, integral, color=["tab:blue", "tab:orange", "tab:green", "tab:red", "tab:purple"]
 )
-ax.set_xticks(np.arange(len(ms)), ms, size=8)
+ax.set_xticks(np.arange(len(n)), n, size=9.5)
 add_title(ax, "D")
 ax.set_ylabel("Cumulative TF $(nM)$", size=12)
 
 ################################################################################################
 # TFR_cumTF_M
+n = [
+    r"$+75\%\ $",
+    r"$+25\%\ $",
+    r"$\mathcal{M}$",
+    r"$-25\%\ $",
+    r"$-75\%\ $",
+]
+
 ms = [
     r"$+75\%\ \mathcal{M}$",
     r"$+25\%\ \mathcal{M}$",
@@ -177,14 +200,14 @@ ax.set_ylabel("TFR ($nM/s$)", size=12)
 # bar plot of cumulative TFR
 ax = axes[2][1]
 ax.bar(
-    ms,
+    n,
     integral,
     color=["tab:blue", "tab:orange", "tab:green", "tab:red", "tab:purple"],
 )
 ax.set_xticks(
-    np.arange(len(ms)),
-    ms,
-    size=8,
+    np.arange(len(n)),
+    n,
+    size=9.5,
 )
 add_title(ax, "F")
 ax.set_ylabel("Cumulative TF $(nM)$", size=12)
