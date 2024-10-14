@@ -35,6 +35,24 @@ def base():
     """Find the base directory for data
 
     Where to look for data, if the user has specified the "DATAPATH" environment
-    variable, look there. Else loook in the current directory
+    variable, look there. Otherwise we try to load `../data`.
+    If that fails we look in the current directory.
     """
-    return Path(os.environ.get("DATAPATH", "./"))
+    data_path = os.environ.get("DATAPATH")
+
+    if data_path is not None:
+        return Path(data_path)
+
+    try:
+        root = Path(__file__).parent
+    except NameError:
+        root = Path(".")
+
+    data_path = root.parent / "data"
+
+    if data_path.is_dir():
+        return data_path
+
+    return Path("./")
+
+
