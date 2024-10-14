@@ -27,6 +27,7 @@ Each of these respect the following environment variables:
 
 - `NSLOTS` how many cores to use
 - `SEED` what seed to use
+- `DATAPATH` where to look for data while plotting
 - `scratch` where to save intermediate data.
 
 ### Figures
