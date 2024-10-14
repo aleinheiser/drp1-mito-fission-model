@@ -27,7 +27,7 @@ Each of these respect the following environment variables:
 
 - `NSLOTS` how many cores to use
 - `SEED` what seed to use
-- `scratch` where to save itermediate data.
+- `scratch` where to save intermediate data.
 
 ### Figures
 
