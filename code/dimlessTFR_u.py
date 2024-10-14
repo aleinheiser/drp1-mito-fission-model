@@ -17,11 +17,11 @@ p = np.array([1.75, 1.25, 1, 0.75, 0.25])
 
 
 labels = [
-    r"$+75\%\ \mu$",
-    r"$+25\%\ \mu$",
+    r"$+75\%\ $",
+    r"$+25\%\ $",
     r"$\mu$",
-    r"$-25\%\ \mu$",
-    r"$-75\%\ \mu$ ",
+    r"$-25\%\ $",
+    r"$-75\%\ $ ",
 ]
 
 U = system.u * p
@@ -48,8 +48,8 @@ def plot_tfr(ax):
 
     ax.legend()
     plt.rc("legend", fontsize=10)
-    ax.set_xlabel("time", size=12)
-    ax.set_ylabel("TFR", size=12)
+    ax.set_xlabel("time (dimensionless)", size=10)
+    ax.set_ylabel("TFR (dimensionless)", size=10)
 
 
 ####
@@ -76,9 +76,9 @@ def plot_cum_tf(ax):
     ax.set_xticks(
         np.arange(len(labels)),
         labels,
-        size=8,
+        size=9.5,
     )
-    ax.set_ylabel("Cumulative TF", size=12)
+    ax.set_ylabel("Cumulative TF (dimensionless)", size=10)
 
 
 if __name__ == "__main__":

@@ -130,37 +130,37 @@ output800 = np.loadtxt(base() / "output_800_2^11_dimless.txt")
 # \mu vs Cumulative total fission rate
 def plot_mu_cfr(ax):
     scatter = ax.scatter(input800[:, 0], output800, s=6, c=output800, cmap="turbo")
-    ax.set_xlabel(r"$\mu$", size=12)
+    ax.set_xlabel(r"$\mu$ (dimensionless)", size=10)
     ax.set_yticks([])
     clb = plt.colorbar(scatter)
-    clb.set_label("Cumulative TF", size=12)
+    clb.set_label("Cumulative TF (dimensionless)", size=10)
 
 
 # \alpha vs Cumulative total fission rate
 def plot_alpha_cfr(ax):
     scatter = ax.scatter(input800[:, 1], output800, s=6, c=output800, cmap="turbo")
-    ax.set_xlabel(r"$\alpha$", size=12)
+    ax.set_xlabel(r"$\alpha$ (dimensionless)", size=10)
     ax.set_yticks([])
     clb = plt.colorbar(scatter)
-    clb.set_label("Cumulative TF", size=12)
+    clb.set_label("Cumulative TF (dimensionless)", size=10)
 
 
 # \beta vs Cumulative total fission rate
 def plot_beta_cfr(ax):
     scatter = ax.scatter(input800[:, 2], output800, s=6, c=output800, cmap="turbo")
-    ax.set_xlabel(r"$\beta$", size=12)
+    ax.set_xlabel(r"$\beta$ (dimensionless)", size=10)
     ax.set_yticks([])
     clb = plt.colorbar(scatter)
-    clb.set_label("Cumulative TF", size=12)
+    clb.set_label("Cumulative TF (dimensionless)", size=10)
 
 
 # \zeta vs Cumulative total fission rate
 def plot_zeta_cfr(ax):
     scatter = ax.scatter(input800[:, 3], output800, s=6, c=output800, cmap="turbo")
-    ax.set_xlabel(r"$\zeta$", size=12)
+    ax.set_xlabel(r"$\zeta$ (dimensionless)", size=10)
     ax.set_yticks([])
     clb = plt.colorbar(scatter)
-    clb.set_label("Cumulative TF", size=12)
+    clb.set_label("Cumulative TF (dimensionless)", size=10)
 
 
 if __name__ == "__main__":

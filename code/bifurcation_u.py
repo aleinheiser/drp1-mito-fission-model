@@ -158,5 +158,6 @@ def plot_bifurcation(ax):
     ax.plot(U, F2, color="tab:red", linestyle="dashed", label="TFR at fixed point")
     ax.plot(U, F1[:, 0], label="minimum TFR from ODE solutions")
     ax.plot(U, F1[:, 1], label="maximum TFR from ODE solutions")
+    ax.set_ylabel("TFR (dimensionless)", size = 10)
     ax.legend(fontsize=10)
-    ax.set_xlabel(r"$\mu$", size=12)
+    ax.set_xlabel(r"$\mu$ (dimensionless) ", size=10)

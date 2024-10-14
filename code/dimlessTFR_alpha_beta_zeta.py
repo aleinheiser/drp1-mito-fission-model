@@ -35,9 +35,10 @@ def plot_alpha(ax):
         solution = get_solution(alpha=a)
         totalfisrate = np.sum(system.f.reshape(-1, 1) * solution.y[2:, :], axis=0)
         ax.plot(solution.t, totalfisrate, label=label)
-
-    ax.set_xlabel("time", size=12)
-    ax.set_ylabel("TFR", size=12)
+    
+    ax.legend()
+    ax.set_xlabel("time (dimensionless)", size=10)
+    ax.set_ylabel("TFR (dimensionless)", size=10)
 
 
 ############################################################################################
@@ -51,8 +52,8 @@ def plot_beta(ax):
         ax.plot(solution.t, totalfisrate, label=label)
 
     ax.legend()
-    ax.set_xlabel("time", size=12)
-    ax.set_ylabel("TFR", size=12)
+    ax.set_xlabel("time (dimensionless)", size=10)
+    ax.set_ylabel("TFR (dimensionless)", size=10)
 
 
 ################################################################################################################
@@ -67,8 +68,8 @@ def plot_zeta(ax):
         ax.plot(solution.t, totalfisrate, label=label)
 
     ax.legend()
-    ax.set_xlabel("time", size=12)
-    ax.set_ylabel("TFR", size=12)
+    ax.set_xlabel("time (dimensionless)", size=10)
+    ax.set_ylabel("TFR (dimensionless)", size=10)
 
 
 ################################################################################################################
