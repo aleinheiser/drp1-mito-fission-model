@@ -32,7 +32,11 @@ Each of these respect the following environment variables:
 
 ### Figures
 
-`make svg` will build svg versions of all the figures in the paper. `make all`
-will build the versions of the figures in the paper. This will require extra
-dependencies to convert the svgs to tiff files. The nix environment contains
-all these needed dependencies.
+Running the command `make svg` will build svg versions of all the figures in
+the paper. The command `make all` will convert the svg files to tiff files as
+found in the paper. This will require the following extra dependencies:
+- [inkscape](https://inkscape.org)
+- [imagemagick](https://imagemagick.org)
+- [zip](https://infozip.sourceforge.net/Zip.html)
+
+The nix environment contains all these needed dependencies.
