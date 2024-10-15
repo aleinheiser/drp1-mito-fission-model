@@ -17,6 +17,14 @@ p = np.array([1.75, 1.25, 1, 0.75, 0.25])
 
 
 labels = [
+    r"$+75\%\ \mu$",
+    r"$+25\%\ \mu$",
+    r"$\mu$",
+    r"$-25\%\ \mu$",
+    r"$-75\%\ \mu$ ",
+]
+
+barplot_labels = [
     r"$+75\%\ $",
     r"$+25\%\ $",
     r"$\mu$",
@@ -63,7 +71,7 @@ def plot_cum_tf(ax):
         integral.append(integrate_fission(solution))
 
     ax.bar(
-        labels,
+        barplot_labels,
         np.array(integral),
         color=[
             "tab:blue",
@@ -74,8 +82,8 @@ def plot_cum_tf(ax):
         ],
     )
     ax.set_xticks(
-        np.arange(len(labels)),
-        labels,
+        np.arange(len(barplot_labels)),
+        barplot_labels,
         size=9.5,
     )
     ax.set_ylabel("Cumulative TF (dimensionless)", size=10)
