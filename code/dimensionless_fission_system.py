@@ -92,23 +92,33 @@ def visualize_solutions():
     for k in range(len(solution.t)):
         consvquan2[k] = solution.y[0, k] + v * sum(s[1:] * solution.y[2:, k])
 
+
+    width = 7.5
+    height = 8.75
+    fig, axes = plt.subplots(1, 2, figsize=(width, 0.33 * height), layout="constrained")
+    ax = axes[0]
     # Plot of solutions
     plt.rcParams.update({"font.size": 13})
     for i in range(1, 32):
-        plt.plot(solution.t, solution.y[i])
-    plt.xlabel(r"time: $\eta$", size=12)
-    plt.ylabel("Concentration", size=12)
+        ax.plot(solution.t, solution.y[i])
+    ax.set_xlabel("time (dimensionless)", size=10)
+    ax.set_ylabel("Concentration (dimensionless)", size=10)
 
+    ax.set_title("A", loc="right", size=12, fontweight="bold")
+    
     # fission_solution1
-    plt.xlim(0, 500)
-    plt.ylim(0, 0.04)  # 0.4
+    # plt.xlim(0, 500)
+    # plt.ylim(0, 0.04)  
 
-    # # fission_solution2
-    # plt.xlim(0,350)
-    # plt.ylim(0,0.007)
-    # plt.text(250,0.0009, '$y(\eta)$', size = 11, color = 'tab:blue')
-    # plt.text(250, 0.00028, '$x_{26}(\eta)$', size = 11, color = 'tab:pink')
-    # plt.text(250, 0.0022, '$x_{25}(\eta)$', size = 11, color = 'tab:brown')
+    # fission_solution2
+    ax.set_xlim(0,350)
+    ax.set_ylim(0,0.007)
+    ax.text(250,0.0009, '$y(\eta)$', size = 11, color = 'tab:blue')
+    ax.text(250, 0.00025, '$x_{26}(\eta)$', size = 11, color = 'tab:pink')
+    ax.text(250, 0.0022, '$x_{25}(\eta)$', size = 11, color = 'tab:brown')
+    ax.text(237, 0.0035, "$x_1(\eta)$", size=11, color="tab:orange")
+    ax.text(285, 0.0035, "-", size=11, color="black")
+    ax.text(291, 0.0035, "$x_{24}(\eta)$", size=11, color="tab:purple")
 
     # # #fission_solution3
     # plt.xlim(0,2500)
@@ -118,19 +128,20 @@ def visualize_solutions():
     # plt.text(2000, 0.004, '$X_{26}(\eta)$', size = 11, color = 'tab:pink')
     # plt.text(2000, 0.033, '$X_{25}(\eta)$', size = 11, color = 'tab:brown')
 
-    plt.show()
 
     # Total Fission Plot
     totalfisrate = np.zeros(len(solution.t))
 
     totalfisrate = np.sum(f.reshape(-1, 1) * solution.y[2:, :], axis=0)
-
-    plt.plot(solution.t, totalfisrate, color="black")
-    plt.xlabel(r"time: $\eta$", size=12)
-    plt.ylabel("TFR", size=12)
-    plt.text(200, 0.0065, r"$TFR(\eta) = \alpha \sum_{i=26}^{30} x_i(\eta)$", size=11)
+    ax = axes[1]
+    ax.set_title("B", loc = "right", size = 12, fontweight ="bold")
+    ax.plot(solution.t, totalfisrate, color="black")
+    ax.set_xlabel("time (dimensionless)", size=10)
+    ax.set_ylabel("TFR (dimensionless)", size=10)
+    ax.text(200, 0.0065, r"$TFR(\eta) = \alpha \sum_{i=26}^{30} x_i(\eta)$", size=11)
 
     plt.show()
-
+    fig.savefig("dimensionless_sysem.svg")
 if __name__ == "__main__":
     visualize_solutions()
+    
